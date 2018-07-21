@@ -3,10 +3,11 @@ import h from 'react-hyperscript';
 import { Nav, NavItem } from 'react-bootstrap';
 import SharedStore from './SharedStore';
 import { observer } from 'mobx-react';
+import Toggle from 'react-bootstrap-toggle';
 
 @observer class Sidebar extends Component {
   render() {
-    return (
+    return ([
       h(Nav, { bsStyle: 'pills' }, 
         SharedStore.parameters.map(item => {
           return h(NavItem, {
@@ -16,8 +17,16 @@ import { observer } from 'mobx-react';
             `${item.get('label', '')}`
           );
         })
-      )
-    );
+      ),
+      h(Toggle, {
+        on: h('h4', 'All'),
+        off: h('h4', 'Any'),
+        onClick: e => SharedStore.toggleAll(),
+        active: SharedStore.all,
+        size: "xs",
+        offstyle: "warning",
+      })
+    ]);
   }
 }
 

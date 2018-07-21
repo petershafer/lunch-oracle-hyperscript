@@ -7,17 +7,24 @@ class SharedStore {
   @observable myParams = Immutable.Set();
   @observable choices = choices;
   @observable parameters = parameters;
+  @observable all = false;
    
   @action toggle = (key) => {
     this.myParams = this.myParams.includes(key) ? this.myParams.remove(key) : this.myParams.add(key);
   }
+  
+  @action toggleAll = () => this.all = !this.all;
   
   @computed get filteredChoices () {
     return this.choices.filter((item) => {
       if (this.myParams.size === 0) {
         return true;
       }
-      return item.get('parameters').toSet().intersect(this.myParams).size === this.myParams.size;
+      if (this.all) {
+        return item.get('parameters').toSet().intersect(this.myParams).size === this.myParams.size;
+      } else {
+        return item.get('parameters').toSet().intersect(this.myParams).size > 0;
+      }
     })
   }
 }

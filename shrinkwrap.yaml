@@ -34,6 +34,7 @@ dependencies:
   raf: 3.4.0
   react: 16.4.1
   react-bootstrap: 0.32.1
+  react-bootstrap-toggle: 2.3.1
   react-dev-utils: 5.0.1
   react-dom: 16.4.1
   react-hyperscript: 3.2.0
@@ -6303,6 +6304,17 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==
+  /react-bootstrap-toggle/2.3.1:
+    dependencies:
+      classnames: 2.2.6
+      prop-types: 15.6.2
+      resize-observer-polyfill: 1.5.0
+    dev: false
+    peerDependencies:
+      react: '>=15.0.0'
+      react-dom: '>=15.0.0'
+    resolution:
+      integrity: sha512-PUNxy82TsqYkkPwKWgRHELAia5xT2j3c7ssE5Vzd1gRlhGlsaFZQfxereNZAy6B+g3/4mYiTps8RHIbBLk97FA==
   /react-bootstrap/0.32.1:
     dependencies:
       babel-runtime: 6.26.0
@@ -6721,6 +6733,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+  /resize-observer-polyfill/1.5.0:
+    dev: false
+    resolution:
+      integrity: sha512-M2AelyJDVR/oLnToJLtuDJRBBWUGUvvGigj1411hXhAdyFWqMaqHp7TixW3FpiLuVaikIcR1QL+zqoJoZlOgpg==
   /resolve-cwd/2.0.0:
     dependencies:
       resolve-from: 3.0.0
@@ -8308,6 +8324,7 @@ specifiers:
   raf: 3.4.0
   react: ^16.4.1
   react-bootstrap: ^0.32.1
+  react-bootstrap-toggle: ^2.2.6
   react-dev-utils: ^5.0.1
   react-dom: ^16.4.1
   react-hyperscript: ^3.2.0

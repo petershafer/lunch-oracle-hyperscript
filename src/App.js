@@ -3,6 +3,7 @@ import h from 'react-hyperscript';
 import { Alert, Grid, Row, Col } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
+import './toggle.css';
 import Content from './Content';
 import Sidebar from './Sidebar';
 
