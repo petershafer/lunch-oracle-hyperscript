@@ -10,7 +10,7 @@ const header = (props) => {
   return (
     h('div', { className: 'App-header' }, [
       h('img', { src: logo, className: 'App-logo', alt: 'logo' }),
-      h('h2', 'Welcome to React')
+      h('h2', 'Lunch Oracle 2018 lol')
     ])
   );
 };

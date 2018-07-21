@@ -8,8 +8,9 @@ import { observer } from 'mobx-react';
     return ([
       h('p#content', 'content'),
       h('ul', {},
-        SharedStore.myList.map(item => h('li', item))
-      )
+        SharedStore.filteredChoices.map(item => h('li', item.get('label', '')))
+      ),
+      !SharedStore.filteredChoices.size && h('p', `Wow, you're picky`)
     ]);
   }
 }

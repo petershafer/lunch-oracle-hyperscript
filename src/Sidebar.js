@@ -2,16 +2,18 @@ import { Component } from 'react';
 import h from 'react-hyperscript';
 import { Nav, NavItem } from 'react-bootstrap';
 import SharedStore from './SharedStore';
+import { observer } from 'mobx-react';
 
-class Sidebar extends Component {
+@observer class Sidebar extends Component {
   render() {
     return (
       h(Nav, { bsStyle: 'pills' }, 
-        [1,2,3].map(item => {
+        SharedStore.parameters.map(item => {
           return h(NavItem, {
-              onClick: e => SharedStore.doSomething(),
+              onClick: e => SharedStore.toggle(item.get('key')),
+              active: SharedStore.myParams.includes(item.get('key')),
             },
-            `Nav Item ${item}`
+            `${item.get('label', '')}`
           );
         })
       )
